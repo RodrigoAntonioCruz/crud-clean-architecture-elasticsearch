@@ -27,9 +27,12 @@ Para rodar esta aplicação, você deve ter instalado em seu computador:
 <ul>  
    <li><a href="https://docs.docker.com/get-started/" target="_blank">Docker</a>
 </ul>
+
 ### Configuração do Elaticsearch
-Para configurar de maneira eficiente o servidor do elasticsearch você deve realizar os seguintes passos:
-1. Rode o docker-compose com o elasticsearch, após ele ter iniciado com sucesso, abra seu terminal e digite os seguintes comandos: 
+
+Para configurar de maneira eficiente o seu índice no elasticsearch você deve realizar os seguintes passos:
+
+1. Execute o comando docker-compose para iniciar o contêiner do Elasticsearch. Após o contêiner ser iniciado com sucesso, abra o seu terminal e digite os seguintes comandos: 
 
 ```
 curl -X PUT "http://localhost:9200/product-index" -H "Content-Type: application/json" -d '{
@@ -110,7 +113,16 @@ Essa configuração é comum em cenários onde você precisa pesquisar e indexar
 </ul>
 
 3. Após a execução dos processos anteriores, estarão disponíveis para acesso em seu browser os seguintes `endpoints` para teste:
-   
+
+<ul>
+   <li> Swagger
+</ul>
 <a href="http://localhost:8887/v1/api/swagger-ui/index.html" target="_blank" title="Clique e navegue!">
-<img align="center" src="https://raw.githubusercontent.com/RodrigoAntonioCruz/assets/main/users-api.png" /></a>
+<img align="center" src="https://raw.githubusercontent.com/RodrigoAntonioCruz/assets/main/swagger-prod.png" /></a>
+
+<ul>
+   <li> Kibana
+</ul>
+<a href="http://localhost:5601/app/management/data/index_management/indices" target="_blank" title="Clique e navegue!">
+<img align="center" src="https://raw.githubusercontent.com/RodrigoAntonioCruz/assets/main/kibana.png" /></a>
 

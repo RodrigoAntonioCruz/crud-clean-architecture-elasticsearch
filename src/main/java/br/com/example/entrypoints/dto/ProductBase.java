@@ -4,13 +4,17 @@ import br.com.example.utils.Constants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class ProductBase implements Serializable {
 
     @Serial
@@ -32,11 +36,4 @@ public abstract class ProductBase implements Serializable {
     @NotNull(message = Constants.PRICE_NOT_NULL)
     @Schema(defaultValue = "Preço do produto", example = "25.99")
     private double price;
-
-    public ProductBase(String id, String name, String description, double price) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-    }
 }
